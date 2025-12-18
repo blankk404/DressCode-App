@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DressCode</string>
+
+    <!-- 导航栏 -->
+    <string name="nav_home">首页</string>
+    <string name="nav_closet">衣橱</string>
+    <string name="nav_tryon">试衣</string>
+    <string name="nav_inspiration">灵感</string>
+    <string name="nav_community">社区</string>
+
+    <!-- 首页 -->
+    <string name="home_greeting">早上好，小美！</string>
+    <string name="home_subtitle">今天穿什么好呢？</string>
+    <string name="weather_today">今日天气</string>
+    <string name="weather_sunny">晴朗，微风</string>
+    <string name="weather_suitable">适合轻薄衣物</string>
+    <string name="quick_match">快速搭配</string>
+    <string name="smart_recommend">智能推荐</string>
+    <string name="today_recommend">今日推荐</string>
+    <string name="recent_match">最近搭配</string>
+    <string name="view_all">查看全部</string>
+
+    <!-- 衣橱 -->
+    <string name="closet_my">我的衣橱</string>
+    <string name="closet_total">总衣物</string>
+    <string name="closet_this_month">本月穿搭</string>
+    <string name="closet_search">搜索衣物…</string>
+    <string name="closet_add">添加衣物</string>
+
+    <!-- 虚拟试衣 -->
+    <string name="tryon_title">虚拟试衣</string>
+    <string name="tryon_subtitle">试试不同的搭配效果</string>
+    <string name="tryon_select_clothing">选择衣物</string>
+    <string name="tryon_match_effect">搭配效果</string>
+    <string name="tryon_save">保存搭配</string>
+    <string name="tryon_reset">重新搭配</string>
+
+    <!-- 灵感 -->
+    <string name="inspiration_title">穿搭灵感</string>
+    <string name="inspiration_subtitle">发现更多搭配可能</string>
+    <string name="inspiration_search">搜索穿搭灵感…</string>
+    <string name="inspiration_hot">热门推荐</string>
+    <string name="inspiration_album">灵感相册</string>
+    <string name="inspiration_my_collection">我的收藏</string>
+    <string name="inspiration_latest">最新上传</string>
+
+    <!-- 社区 -->
+    <string name="community_title">穿搭社区</string>
+    <string name="community_subtitle">分享你的穿搭，发现更多可能</string>
+    <string name="community_my_story">我的故事</string>
+    <string name="community_follow">关注</string>
+    <string name="community_recommend">推荐</string>
+    <string name="community_hot">热门</string>
+    <string name="community_latest">最新</string>
+
+    <!-- 个人中心 -->
+    <string name="profile_title">个人中心</string>
+    <string name="profile_edit">编辑资料</string>
+    <string name="profile_settings">设置</string>
+    <string name="profile_about">关于我们</string>
+    <string name="profile_logout">退出登录</string>
+    <string name="profile_my_outfits">我的穿搭</string>
+    <string name="profile_my_collections">我的收藏</string>
+    <string name="profile_my_likes">我的点赞</string>
+    <string name="profile_help">帮助中心</string>
+</resources>
