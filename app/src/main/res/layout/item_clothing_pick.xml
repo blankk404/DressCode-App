@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        layout="@layout/item_clothing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- 选中标识 -->
+    <FrameLayout
+        android:id="@+id/checkOverlay"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_avatar_circle"
+        android:visibility="gone"
+        android:elevation="6dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:src="@android:drawable/checkbox_on_background"
+            android:tint="@color/primary_purple" />
+    </FrameLayout>
+
+</FrameLayout>
+
+
