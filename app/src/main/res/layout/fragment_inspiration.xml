@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_gray"
+    android:background="@color/bg_gray">
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fillViewport="true">
 
     <LinearLayout
@@ -31,95 +35,66 @@
 
         <!-- 搜索栏 -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:endIconMode="custom"
+            app:endIconDrawable="@android:drawable/ic_menu_search"
+            app:endIconContentDescription="搜索">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
                 android:hint="@string/inspiration_search" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- 分类标签 -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="推荐"
-                    android:textColor="@color/white"
-                    android:backgroundTint="@color/primary_pink"
-                    android:layout_marginEnd="8dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="职场"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_marginEnd="8dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="约会"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_marginEnd="8dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="休闲"
-                    style="@style/Widget.Material3.Button.OutlinedButton" />
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <!-- 热门推荐 -->
+        <!-- AI推荐（搜索后展示） -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/inspiration_hot"
+            android:text="AI推荐"
             android:textColor="@color/text_primary"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="12dp" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardAiRecommend"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="120dp"
             android:layout_marginBottom="24dp"
+            android:visibility="gone"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/gradient_pink_purple"
+                android:background="@drawable/gradient_blue_indigo"
                 android:orientation="vertical"
                 android:gravity="bottom"
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/tvAiTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="春日温柔风"
+                    android:text="AI推荐相册"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvAiSub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="粉色毛衣 + 白色半身裙"
+                    android:text="点击查看10张推荐"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:alpha="0.9" />
@@ -136,15 +111,49 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- 标签栏（可编辑） -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="灵感相册网格（2列布局）"
+            android:layout_marginBottom="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/tagContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvInspirationPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/tvInspirationEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="24dp"
             android:textColor="@color/text_secondary"
             android:textSize="14sp"
-            android:layout_gravity="center"
-            android:padding="32dp" />
+            android:text="暂无图片，点击右下角 + 上传"
+            android:visibility="gone" />
 
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fabAddInspiration"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_margin="16dp"
+    android:src="@android:drawable/ic_input_add"
+    app:backgroundTint="@color/primary_purple"
+    app:tint="@color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

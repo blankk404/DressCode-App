@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_gray"
+    android:background="@color/bg_gray">
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fillViewport="true">
 
     <LinearLayout
@@ -50,9 +54,10 @@
                         android:textSize="12sp" />
 
                     <TextView
+                        android:id="@+id/tvTotalCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="156"
+                        android:text="0"
                         android:textColor="@color/text_primary"
                         android:textSize="24sp"
                         android:textStyle="bold" />
@@ -81,9 +86,10 @@
                         android:textSize="12sp" />
 
                     <TextView
+                        android:id="@+id/tvOutfitCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="28"
+                        android:text="0"
                         android:textColor="@color/text_primary"
                         android:textSize="24sp"
                         android:textStyle="bold" />
@@ -102,46 +108,120 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAll"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="全部"
-                    android:textColor="@color/white"
-                    android:backgroundTint="@color/primary_pink"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_marginEnd="8dp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="上衣"
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_marginEnd="8dp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="下装"
+                    android:text="裤子"
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_marginEnd="8dp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSkirt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="裙子"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCoat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="外套"
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_marginEnd="8dp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAccessory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="配饰"
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_marginEnd="8dp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnShoes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="鞋子"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- 季节筛选（像“我的搭配”那样） -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeasonAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/closet_filter_all"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeasonAllYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/outfit_season_all"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeasonSpring"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/outfit_season_spring"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeasonSummer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/outfit_season_summer"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeasonAutumn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/outfit_season_autumn"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeasonWinter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/outfit_season_winter"
                     style="@style/Widget.Material3.Button.OutlinedButton" />
             </LinearLayout>
         </HorizontalScrollView>
@@ -160,15 +240,45 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- 衣物网格 -->
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvClothingItems"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="衣物网格（3列布局）"
-            android:textColor="@color/text_secondary"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:padding="32dp" />
+            android:nestedScrollingEnabled="false" />
+
+        <!-- 空状态 -->
+        <LinearLayout
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="48dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/closet_empty"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
+
+<!-- 添加衣物按钮 -->
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fabAddClothing"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_margin="16dp"
+    android:src="@android:drawable/ic_input_add"
+    app:backgroundTint="@color/primary_purple"
+    app:tint="@color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

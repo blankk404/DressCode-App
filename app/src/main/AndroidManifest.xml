@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <!-- 权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:appCategory="audio"
@@ -28,20 +35,83 @@
             </intent-filter>
         </service>
 
+        <!-- 启动页 -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.DressCode" >
+            android:theme="@style/Theme.DressCode.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 登录页 -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
+
+        <!-- 注册页 -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
+
+        <!-- 主页 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode" />
+
+        <!-- 个人中心 -->
         <activity
             android:name=".ProfileActivity"
             android:exported="false"
             android:theme="@style/Theme.DressCode" />
+
+        <!-- 编辑资料 -->
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
+
+        <!-- 身材档案 -->
+        <activity
+            android:name=".BodyProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
+
+        <!-- 添加衣物 -->
+        <activity
+            android:name=".AddClothingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
+
+        <!-- 衣物详情 -->
+        <activity
+            android:name=".ClothingDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
+
+        <!-- 添加搭配 -->
+        <activity
+            android:name=".AddOutfitActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
+
+        <!-- 查看/编辑拼图 -->
+        <activity
+            android:name=".OutfitDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
+
+        <!-- AI 推荐 -->
+        <activity
+            android:name=".AiRecommendActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DressCode.NoActionBar" />
     </application>
 
 </manifest>

@@ -2,6 +2,27 @@ plugins {
     id 'com.android.application'
 }
 
+def siliconflowApiBase = "https://api.siliconflow.cn/v1"
+def siliconflowModelName = "Qwen/Qwen3-VL-8B-Instruct"
+
+// 优先级：Gradle Property -> local.properties -> 环境变量
+def siliconflowApiKey = ""
+if (project.findProperty("SILICONFLOW_API_KEY") != null) {
+    siliconflowApiKey = project.findProperty("SILICONFLOW_API_KEY").toString()
+} else {
+    def lpFile = rootProject.file("local.properties")
+    if (lpFile.exists()) {
+        def props = new Properties()
+        lpFile.withInputStream { props.load(it) }
+        def v = props.getProperty("SILICONFLOW_API_KEY")
+        if (v != null) siliconflowApiKey = v
+    }
+    if (siliconflowApiKey == null || siliconflowApiKey.isEmpty()) {
+        def env = System.getenv("SILICONFLOW_API_KEY")
+        if (env != null) siliconflowApiKey = env
+    }
+}
+
 android {
     namespace 'com.dresscode'
     compileSdk 34
@@ -14,6 +35,13 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // SiliconFlow 配置（密钥不要写死在仓库文件里；推荐放 local.properties / 环境变量）
+        buildConfigField "String", "SILICONFLOW_API_BASE", "\"${siliconflowApiBase}\""
+        buildConfigField "String", "SILICONFLOW_API_KEY", "\"${siliconflowApiKey}\""
+        buildConfigField "String", "SILICONFLOW_MODEL_NAME", "\"${siliconflowModelName}\""
+        buildConfigField "int", "SILICONFLOW_MAX_TOKENS", "200"
+        buildConfigField "int", "SILICONFLOW_TEMPERATURE", "0"
     }
 
     buildTypes {
@@ -30,6 +58,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 }
 
@@ -41,6 +70,20 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.7.6'
     implementation 'androidx.navigation:navigation-ui:2.7.6'
     implementation libs.media
+
+    // Room数据库
+    implementation 'androidx.room:room-runtime:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+
+    // ViewModel和LiveData
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.7.0'
+
+    // 图片加载与网络
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

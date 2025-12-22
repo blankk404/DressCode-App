@@ -67,10 +67,14 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="16dp">
 
-                <View
+                <ImageView
+                    android:id="@+id/ivAvatar"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="@drawable/logo_background"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:outlineProvider="background"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
                     android:layout_marginEnd="16dp" />
 
                 <LinearLayout
@@ -80,6 +84,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvNickname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="小美"
@@ -88,6 +93,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tvUserInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="穿搭达人 · 已加入30天"
@@ -199,6 +205,45 @@
             android:orientation="vertical"
             android:background="@color/bg_white"
             android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/ll_body_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_person_24"
+                    android:layout_marginEnd="16dp"
+                    app:tint="@color/primary_purple" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/profile_body_profile"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@android:drawable/ic_menu_more"
+                    app:tint="@color/text_gray" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_gray"
+                android:layout_marginStart="56dp" />
 
             <LinearLayout
                 android:id="@+id/ll_my_outfits"

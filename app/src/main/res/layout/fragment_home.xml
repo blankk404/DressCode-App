@@ -29,13 +29,19 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
-                <View
+                <ImageView
+                    android:id="@+id/iv_home_avatar"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:background="@drawable/logo_background"
-                    android:gravity="center" />
+                    android:background="@drawable/bg_avatar_circle"
+                    android:outlineProvider="background"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baseline_person_24"
+                    android:tint="@color/text_secondary" />
 
                 <TextView
+                    android:id="@+id/tv_app_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -72,6 +78,7 @@
             android:paddingBottom="8dp">
 
             <TextView
+                android:id="@+id/tv_greeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home_greeting"
@@ -90,6 +97,7 @@
 
         <!-- 天气卡片 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardWeather"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -111,6 +119,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvWeatherCity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/weather_today"
@@ -119,15 +128,17 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tvWeatherTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="22°C"
+                        android:text="--°C"
                         android:textColor="@color/white"
                         android:textSize="28sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tvWeatherDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -144,6 +155,7 @@
                     android:gravity="end">
 
                     <ImageView
+                        android:id="@+id/ivWeatherIcon"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:src="@drawable/baseline_cloud_24"
@@ -151,6 +163,7 @@
                         android:alpha="0.8" />
 
                     <TextView
+                        android:id="@+id/tvWeatherAdvice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -158,6 +171,43 @@
                         android:textColor="@color/white"
                         android:textSize="12sp" />
                 </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 穿搭建议（AI）卡片：独立于天气信息展示 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardOutfitAdvice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/bg_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvOutfitAdviceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/outfit_advice_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvOutfitAdviceText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/outfit_advice_loading"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

@@ -7,4 +7,10 @@
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <!-- 无ActionBar主题 -->
+    <style name="Theme.DressCode.NoActionBar" parent="Theme.DressCode">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
 </resources>

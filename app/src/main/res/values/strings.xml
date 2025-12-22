@@ -7,7 +7,7 @@
     <string name="nav_closet">衣橱</string>
     <string name="nav_tryon">试衣</string>
     <string name="nav_inspiration">灵感</string>
-    <string name="nav_community">社区</string>
+    <string name="nav_community">我的搭配</string>
 
     <!-- 首页 -->
     <string name="home_greeting">早上好，小美！</string>
@@ -15,6 +15,14 @@
     <string name="weather_today">今日天气</string>
     <string name="weather_sunny">晴朗，微风</string>
     <string name="weather_suitable">适合轻薄衣物</string>
+    <string name="weather_locating">定位中…</string>
+    <string name="weather_switch_city">切换城市</string>
+    <string name="weather_city_hint">输入城市名（如：上海）</string>
+    <string name="weather_use_location">使用当前位置</string>
+    <string name="weather_refreshing">更新中…</string>
+    <string name="weather_advice_loading">生成穿搭建议中…</string>
+    <string name="outfit_advice_title">穿搭建议</string>
+    <string name="outfit_advice_loading">正在根据今日天气生成建议…</string>
     <string name="quick_match">快速搭配</string>
     <string name="smart_recommend">智能推荐</string>
     <string name="today_recommend">今日推荐</string>
@@ -24,7 +32,7 @@
     <!-- 衣橱 -->
     <string name="closet_my">我的衣橱</string>
     <string name="closet_total">总衣物</string>
-    <string name="closet_this_month">本月穿搭</string>
+    <string name="closet_this_month">穿搭数量</string>
     <string name="closet_search">搜索衣物…</string>
     <string name="closet_add">添加衣物</string>
 
@@ -45,14 +53,22 @@
     <string name="inspiration_my_collection">我的收藏</string>
     <string name="inspiration_latest">最新上传</string>
 
-    <!-- 社区 -->
-    <string name="community_title">穿搭社区</string>
-    <string name="community_subtitle">分享你的穿搭，发现更多可能</string>
-    <string name="community_my_story">我的故事</string>
-    <string name="community_follow">关注</string>
-    <string name="community_recommend">推荐</string>
-    <string name="community_hot">热门</string>
-    <string name="community_latest">最新</string>
+    <!-- 我的搭配 -->
+    <string name="community_title">我的搭配</string>
+    <string name="community_subtitle">按场景和季节管理你的搭配</string>
+    <string name="outfit_scene_work">工作</string>
+    <string name="outfit_scene_leisure">休闲</string>
+    <string name="outfit_scene_sport">运动</string>
+    <string name="outfit_scene_date">约会</string>
+    <string name="outfit_scene_travel">旅行</string>
+    <string name="outfit_season_spring">春</string>
+    <string name="outfit_season_summer">夏</string>
+    <string name="outfit_season_autumn">秋</string>
+    <string name="outfit_season_winter">冬</string>
+    <string name="outfit_season_all">四季</string>
+    <string name="outfit_add">添加搭配</string>
+    <string name="outfit_empty">暂无搭配，点击右下角 + 添加</string>
+    <string name="outfit_upload_photo">点击上传上身照</string>
 
     <!-- 个人中心 -->
     <string name="profile_title">个人中心</string>
@@ -64,4 +80,97 @@
     <string name="profile_my_collections">我的收藏</string>
     <string name="profile_my_likes">我的点赞</string>
     <string name="profile_help">帮助中心</string>
+    <string name="profile_body_profile">我的身材档案</string>
+    <string name="profile_days_joined">已加入%d天</string>
+
+    <!-- 启动页 -->
+    <string name="splash_slogan">开启你的穿搭之旅</string>
+    <string name="splash_login">登录</string>
+    <string name="splash_register">注册</string>
+
+    <!-- 登录页 -->
+    <string name="login_title">欢迎回来</string>
+    <string name="login_subtitle">登录你的账号</string>
+    <string name="login_account_hint">用户名/手机号</string>
+    <string name="login_password_hint">密码</string>
+    <string name="login_forgot_password">忘记密码？</string>
+    <string name="login_button">登录</string>
+    <string name="login_no_account">还没有账号？</string>
+    <string name="login_go_register">立即注册</string>
+
+    <!-- 注册页 -->
+    <string name="register_title">创建账号</string>
+    <string name="register_subtitle">加入DressCode社区</string>
+    <string name="register_username_hint">用户名</string>
+    <string name="register_password_hint">密码</string>
+    <string name="register_password_confirm_hint">确认密码</string>
+    <string name="register_phone_hint">手机号</string>
+    <string name="register_nickname_hint">昵称</string>
+    <string name="register_gender_hint">性别</string>
+    <string name="register_button">注册</string>
+    <string name="register_has_account">已有账号？</string>
+    <string name="register_go_login">立即登录</string>
+    <string name="register_male">男</string>
+    <string name="register_female">女</string>
+    <string name="register_secret">保密</string>
+
+    <!-- 编辑资料 -->
+    <string name="edit_profile_title">编辑资料</string>
+    <string name="edit_profile_avatar">头像</string>
+    <string name="edit_profile_change_avatar">更换头像</string>
+    <string name="edit_profile_nickname">昵称</string>
+    <string name="edit_profile_username">用户名</string>
+    <string name="edit_profile_phone">手机号</string>
+    <string name="edit_profile_gender">性别</string>
+    <string name="edit_profile_save">保存</string>
+    <string name="edit_profile_cancel">取消</string>
+
+    <!-- 身材档案 -->
+    <string name="body_profile_title">我的身材档案</string>
+    <string name="body_profile_height">身高</string>
+    <string name="body_profile_weight">体重</string>
+    <string name="body_profile_bmi">BMI指数</string>
+    <string name="body_profile_head">头围</string>
+    <string name="body_profile_shoulder">肩宽</string>
+    <string name="body_profile_waist">腰围</string>
+    <string name="body_profile_chest">胸围</string>
+    <string name="body_profile_hip">臀围</string>
+    <string name="body_profile_shoe">鞋码（欧码）</string>
+    <string name="body_profile_cm">cm</string>
+    <string name="body_profile_kg">kg</string>
+    <string name="body_profile_save">保存档案</string>
+    <string name="body_profile_empty">暂无身材档案</string>
+    <string name="body_profile_empty_hint">填写身材档案，获得更精准的穿搭推荐</string>
+    <string name="body_profile_create">创建档案</string>
+    <string name="body_profile_edit">编辑档案</string>
+    <string name="body_profile_bmi_status">BMI状态：%s</string>
+    <string name="body_profile_hint_height">请输入身高（cm）</string>
+    <string name="body_profile_hint_weight">请输入体重（kg）</string>
+    <string name="body_profile_hint_head">请输入头围（cm）</string>
+    <string name="body_profile_hint_shoulder">请输入肩宽（cm）</string>
+    <string name="body_profile_hint_waist">请输入腰围（cm）</string>
+    <string name="body_profile_hint_chest">请输入胸围（cm）</string>
+    <string name="body_profile_hint_hip">请输入臀围（cm）</string>
+    <string name="body_profile_hint_shoe">请输入鞋码</string>
+
+    <!-- 衣橱 -->
+    <string name="closet_add_item">添加衣物</string>
+    <string name="closet_filter_all">全部</string>
+    <string name="closet_empty">衣橱空空，快去添加衣物吧</string>
+    <string name="clothing_detail_title">衣物详情</string>
+    <string name="clothing_name">衣物名称</string>
+    <string name="clothing_category">类别</string>
+    <string name="clothing_brand">品牌</string>
+    <string name="clothing_color">颜色</string>
+    <string name="clothing_size">尺码</string>
+    <string name="clothing_season">季节</string>
+    <string name="clothing_price">价格</string>
+    <string name="clothing_purchase_date">购买日期</string>
+    <string name="clothing_style">风格</string>
+    <string name="clothing_notes">备注</string>
+    <string name="clothing_save">保存</string>
+    <string name="clothing_delete">删除</string>
+    <string name="clothing_select_image">选择图片</string>
+    <string name="add_clothing_title">添加衣物</string>
+    <string name="edit_clothing_title">编辑衣物</string>
 </resources>
